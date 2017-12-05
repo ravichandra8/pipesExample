@@ -7,8 +7,36 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+<h1> convert upper case to lower case using pipe concept</h1>
+  <div  *ngFor="let employee of employees">
+    <p>{{employee}}</p>
+        <p>{{employee.Divisions | titlecase}}</p>
+        <p>{{employee.DivisionId}}</p>
+
+    </div>
+<hr/>
+    <h1> convert date format using pipe concept</h1>
+<p>{{birthday|date}}</p>
+<hr/>
+<h1> parameterizing pipe-convert date format using pipe with passing parameters</h1>
+<p>{{birthday|date:"M/dd/yy"}}</p>
+<p>{{birthday|date:'fullDate'}}</p>
+<p>The hero's birthday is {{ birthday | date:format }}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+<hr/>
+<h1>build in pipe: display the data in json format using json pipe</h1>
+<div  *ngFor="let employee of employees">
+  <p>{{employee|json}}</p>
+      <p>{{employee.Divisions | titlecase}}</p>
+      <p>{{employee.DivisionId}}</p>
+
+  </div>
+
+  <hr/>
+  <h1>custom pipe</h1>
+ <p>Super power boost: {{2 | custompipe: 10}}</p>
+
+
 </ion-content>
